@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-09-18T12:33:08.071985" rpa="false" schemaversion="5">
+<suite id="s1" name="Search" source="C:\Users\Arjun\PycharmProjects\UI Framework Assignment\TestCases\search.robot">
+<kw name="Open the Browser" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-18T12:33:08.653307" level="INFO">Opening browser 'chrome' to base url 'https://www.automationexercise.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-18T12:33:08.653042" elapsed="27.554945"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-18T12:33:36.208347" elapsed="0.039479"/>
+</kw>
+<status status="PASS" start="2025-09-18T12:33:08.652384" elapsed="27.595585"/>
+</kw>
+<test id="s1-t1" name="Item to search" line="9">
+<kw name="SearchTest">
+<kw name="Click on menu options" owner="keywords">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-09-18T12:33:36.250088" level="INFO">Clicking link '//a[@href='/products']'.</msg>
+<arg>${PRODUCTS}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-18T12:33:36.249595" elapsed="26.607898"/>
+</kw>
+<status status="PASS" start="2025-09-18T12:33:36.249274" elapsed="26.608457"/>
+</kw>
+<kw name="Search item" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-18T12:34:02.859305" level="INFO">Typing text 'dress' into text field 'search'.</msg>
+<arg>search</arg>
+<arg>${product}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-18T12:34:02.858795" elapsed="0.704146"/>
+</kw>
+<arg>${product}</arg>
+<status status="PASS" start="2025-09-18T12:34:02.858082" elapsed="0.704985"/>
+</kw>
+<kw name="Click on search button" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-18T12:34:03.564273" level="INFO">Clicking element 'submit_search'.</msg>
+<arg>${SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-18T12:34:03.563919" elapsed="3.993845"/>
+</kw>
+<status status="PASS" start="2025-09-18T12:34:03.563318" elapsed="3.994578"/>
+</kw>
+<kw name="Verify Text on page" owner="keywords">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-09-18T12:34:07.581674" level="INFO">Current page contains text 'Dress'.</msg>
+<arg>${VISIBLE TEXT}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-09-18T12:34:07.558383" elapsed="0.023499"/>
+</kw>
+<status status="PASS" start="2025-09-18T12:34:07.558080" elapsed="0.024022"/>
+</kw>
+<arg>dress</arg>
+<status status="PASS" start="2025-09-18T12:33:36.248765" elapsed="31.333494"/>
+</kw>
+<status status="PASS" start="2025-09-18T12:33:36.248061" elapsed="31.334934"/>
+</test>
+<kw name="Close the Browser" owner="keywords" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-09-18T12:34:07.585845" elapsed="3.363971"/>
+</kw>
+<status status="PASS" start="2025-09-18T12:34:07.585417" elapsed="3.364830"/>
+</kw>
+<status status="PASS" start="2025-09-18T12:33:08.081781" elapsed="62.868636"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Search" id="s1" pass="1" fail="0" skip="0">Search</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
