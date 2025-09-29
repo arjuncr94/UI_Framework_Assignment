@@ -1,73 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-09-18T12:33:08.071985" rpa="false" schemaversion="5">
-<suite id="s1" name="Search" source="C:\Users\Arjun\PycharmProjects\UI Framework Assignment\TestCases\search.robot">
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-09-29T14:56:06.810999" rpa="false" schemaversion="5">
+<suite id="s1" name="Logout" source="C:\Users\Arjun\PycharmProjects\UI Framework Assignment\TestCases\logout.robot">
 <kw name="Open the Browser" owner="keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-09-18T12:33:08.653307" level="INFO">Opening browser 'chrome' to base url 'https://www.automationexercise.com/'.</msg>
+<msg time="2025-09-29T14:56:07.557604" level="INFO">Opening browser 'chrome' to base url 'https://www.automationexercise.com/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-09-18T12:33:08.653042" elapsed="27.554945"/>
+<status status="PASS" start="2025-09-29T14:56:07.557393" elapsed="6.263220"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-09-18T12:33:36.208347" elapsed="0.039479"/>
+<status status="PASS" start="2025-09-29T14:56:13.820834" elapsed="0.041246"/>
 </kw>
-<status status="PASS" start="2025-09-18T12:33:08.652384" elapsed="27.595585"/>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>10 seconds</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-09-29T14:56:13.862299" elapsed="0.001287"/>
 </kw>
-<test id="s1-t1" name="Item to search" line="9">
-<kw name="SearchTest">
+<status status="PASS" start="2025-09-29T14:56:07.556875" elapsed="6.306852"/>
+</kw>
+<test id="s1-t1" name="Login Using" line="9">
+<kw name="LogoutTest">
+<kw name="Click on Login option" owner="keywords">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-09-29T14:56:13.865898" level="INFO">Clicking link '//a[@href='/login']'.</msg>
+<arg>${LOGIN_MENU}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-29T14:56:13.865444" elapsed="0.587364"/>
+</kw>
+<status status="PASS" start="2025-09-29T14:56:13.865198" elapsed="0.588005"/>
+</kw>
+<kw name="Input user name" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-29T14:56:14.455928" level="INFO">Typing text 'arjuncr94@gmail.com' into text field 'name:email'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-29T14:56:14.455362" elapsed="0.255405"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-09-29T14:56:14.453722" elapsed="0.257250"/>
+</kw>
+<kw name="Input the password" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-29T14:56:14.712621" level="INFO">Typing text 'Practice@12' into text field 'name:password'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-29T14:56:14.711948" elapsed="0.142245"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-09-29T14:56:14.711245" elapsed="0.143130"/>
+</kw>
+<kw name="Click Login" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-29T14:56:14.855352" level="INFO">Clicking element '//button[@data-qa='login-button']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-29T14:56:14.855060" elapsed="1.833258"/>
+</kw>
+<status status="PASS" start="2025-09-29T14:56:14.854656" elapsed="1.833792"/>
+</kw>
 <kw name="Click on menu options" owner="keywords">
 <kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2025-09-18T12:33:36.250088" level="INFO">Clicking link '//a[@href='/products']'.</msg>
-<arg>${PRODUCTS}</arg>
+<msg time="2025-09-29T14:56:16.689294" level="INFO">Clicking link '//a[@href='/products']'.</msg>
+<arg>${PRODUCTS_MENU}</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-18T12:33:36.249595" elapsed="26.607898"/>
+<status status="PASS" start="2025-09-29T14:56:16.689045" elapsed="1.391879"/>
 </kw>
-<status status="PASS" start="2025-09-18T12:33:36.249274" elapsed="26.608457"/>
+<status status="PASS" start="2025-09-29T14:56:16.688738" elapsed="1.392417"/>
 </kw>
 <kw name="Search item" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-18T12:34:02.859305" level="INFO">Typing text 'dress' into text field 'search'.</msg>
+<msg time="2025-09-29T14:56:18.082514" level="INFO">Typing text 'dress' into text field 'search'.</msg>
 <arg>search</arg>
 <arg>${product}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-18T12:34:02.858795" elapsed="0.704146"/>
+<status status="PASS" start="2025-09-29T14:56:18.082266" elapsed="0.162844"/>
 </kw>
 <arg>${product}</arg>
-<status status="PASS" start="2025-09-18T12:34:02.858082" elapsed="0.704985"/>
+<status status="PASS" start="2025-09-29T14:56:18.081472" elapsed="0.163816"/>
 </kw>
 <kw name="Click on search button" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-09-18T12:34:03.564273" level="INFO">Clicking element 'submit_search'.</msg>
+<msg time="2025-09-29T14:56:18.246103" level="INFO">Clicking element 'submit_search'.</msg>
 <arg>${SEARCH_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-18T12:34:03.563919" elapsed="3.993845"/>
+<status status="PASS" start="2025-09-29T14:56:18.245862" elapsed="0.969468"/>
 </kw>
-<status status="PASS" start="2025-09-18T12:34:03.563318" elapsed="3.994578"/>
+<status status="PASS" start="2025-09-29T14:56:18.245496" elapsed="0.970047"/>
 </kw>
-<kw name="Verify Text on page" owner="keywords">
+<kw name="Click logout" owner="keywords">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-09-29T14:56:19.216406" level="INFO">Clicking link 'link:Logout'.</msg>
+<arg>${LOGOUT_LINK}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-29T14:56:19.216172" elapsed="0.907000"/>
+</kw>
+<status status="PASS" start="2025-09-29T14:56:19.215897" elapsed="0.907441"/>
+</kw>
+<kw name="Logout msg" owner="keywords">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-09-18T12:34:07.581674" level="INFO">Current page contains text 'Dress'.</msg>
-<arg>${VISIBLE TEXT}</arg>
+<msg time="2025-09-29T14:56:20.146716" level="INFO">Current page contains text 'Login to your account'.</msg>
+<arg>${LOGOUT_MSG}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-09-18T12:34:07.558383" elapsed="0.023499"/>
+<status status="PASS" start="2025-09-29T14:56:20.123987" elapsed="0.022967"/>
 </kw>
-<status status="PASS" start="2025-09-18T12:34:07.558080" elapsed="0.024022"/>
+<status status="PASS" start="2025-09-29T14:56:20.123562" elapsed="0.023590"/>
 </kw>
+<arg>arjuncr94@gmail.com</arg>
+<arg>Practice@12</arg>
 <arg>dress</arg>
-<status status="PASS" start="2025-09-18T12:33:36.248765" elapsed="31.333494"/>
+<status status="PASS" start="2025-09-29T14:56:13.864719" elapsed="6.282531"/>
 </kw>
-<status status="PASS" start="2025-09-18T12:33:36.248061" elapsed="31.334934"/>
+<status status="PASS" start="2025-09-29T14:56:13.863837" elapsed="6.283887"/>
 </test>
 <kw name="Close the Browser" owner="keywords" type="TEARDOWN">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-09-18T12:34:07.585845" elapsed="3.363971"/>
+<status status="PASS" start="2025-09-29T14:56:20.149381" elapsed="3.603847"/>
 </kw>
-<status status="PASS" start="2025-09-18T12:34:07.585417" elapsed="3.364830"/>
+<status status="PASS" start="2025-09-29T14:56:20.149183" elapsed="3.604371"/>
 </kw>
-<status status="PASS" start="2025-09-18T12:33:08.081781" elapsed="62.868636"/>
+<status status="PASS" start="2025-09-29T14:56:06.831934" elapsed="16.921740"/>
 </suite>
 <statistics>
 <total>
@@ -76,7 +132,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="Search" id="s1" pass="1" fail="0" skip="0">Search</stat>
+<stat name="Logout" id="s1" pass="1" fail="0" skip="0">Logout</stat>
 </suite>
 </statistics>
 <errors>

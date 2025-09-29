@@ -8,13 +8,14 @@ Resource   ../Resources/locators.robot
 Open the Browser
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
+    Set Selenium Timeout    10 seconds
 
 
 Close the Browser
     Close All Browsers
 
 Click on menu options
-    Click Link     ${PRODUCTS}
+    Click Link     ${PRODUCTS_MENU}
 
 Click on Login option
     Click Link    ${LOGIN_MENU}
@@ -35,7 +36,8 @@ Click logout
 
 Login msg
     Page Should Contain    ${LOGIN_MSG}
-
+Logout msg
+    Page Should Contain    ${LOGOUT_MSG}
 Login success
     Page Should Contain  ${DASHBOARD_TEXT}
 
@@ -46,6 +48,12 @@ Search item
 Click on search button
     Click Element    ${SEARCH_BUTTON}
 
-
 Verify Text on page
     Page Should Contain    ${VISIBLE TEXT}
+
+Add to Cart
+
+    Click Element    ${VIEW PRODUCT}
+    Click Element    ${ADD TO CART}
+    Wait Until Element Is Visible      ${CONTINUE SHOPPING}
+    Click Element     ${CONTINUE SHOPPING}

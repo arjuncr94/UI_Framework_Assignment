@@ -11,10 +11,11 @@ Item to search    dress
 *** Keywords ***
 SearchTest
     [Arguments]   ${product}
-   Click on menu options
-    Search item    ${product}
-    Click on search button
-    Verify Text on page
+     Click on menu options
+     Search item    ${product}
+     Click on search button
+     Verify Text on page
+     Add To Cart
 
 
     
