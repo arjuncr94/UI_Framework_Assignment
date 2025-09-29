@@ -20,6 +20,3 @@ LogoutTest
     Click on search button
     Click Logout
     Logout Msg
-    
-
-

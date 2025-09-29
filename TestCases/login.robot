@@ -6,11 +6,9 @@ Suite Setup    Open The Browser
 Suite Teardown    Close The Browser
 Test Template    LoginTest
 
-
-#LoginTestExcel with ${username} and ${password}
 *** Test Cases ***
+#LoginTestExcel with ${username} and ${password}
 Login With Valid User  arjuncr94@gmail.com    Practice@12
-
 
 *** Keywords ***
 LoginTest
