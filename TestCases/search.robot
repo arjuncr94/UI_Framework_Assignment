@@ -21,6 +21,7 @@ SearchTest
      Verify Text on page
      Add To Cart
      Cart Page
+     Place Order
 
 
 

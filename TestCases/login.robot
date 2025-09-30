@@ -8,7 +8,7 @@ Test Template    LoginTest
 
 *** Test Cases ***
 #LoginTestExcel with ${username} and ${password}
-Login With Valid User  arjuncr94@gmail.com    Practice@12
+
 
 *** Keywords ***
 LoginTest
@@ -17,4 +17,4 @@ LoginTest
     Input User Name    ${username}
     Input The Password    ${password}
     Click Login
-    Login Msg
+    Assert Login

@@ -33,8 +33,8 @@ Click Login
 Click logout
     Click Link    ${LOGOUT_LINK}
 
-Login msg
-    Page Should Contain    ${LOGIN_MSG} #Visible text as locator
+Assert Login
+    Page Should Contain    ${LOGIN_MSG}       #Visible text as locator
 Logout msg
     Page Should Contain    ${LOGOUT_MSG}
 Login success
@@ -44,6 +44,23 @@ Search item
     [Arguments]    ${product}
     Input Text    search    ${product}
 
+Search multiple products and verify
+
+    ${products_list}=  Create List        Blue Top    Winter Top
+    FOR    ${each}    IN   @{products_list}
+            Input Text    search    ${each}
+            Click Element    ${SEARCH_BUTTON}
+            Log To Console    ${each}
+            ${name}=  Get Text    //div[contains(@class,'product-image-wrapper')]//p
+            IF    '${each}' == '${name}'
+                Click Element    ${VIEW_PRODUCT_COMMON}
+                Click Element    ${ADD_CART}
+                Go Back
+            ELSE
+                 Log To Console    ${each} not found
+                
+            END
+    END
 Click on search button
     Click Element    ${SEARCH_BUTTON}
 
@@ -60,7 +77,11 @@ Cart Page
 
     Click Link    ${CART_BUTTON}
     Click Link    ${PROCEED}
-    Sleep    3
+
+
+Place Order
+    Wait Until Page Contains    ${ADDRESS}
     Page Should Contain    ${ADDRESS}  
     Click Link    ${ORDER}
+
 
