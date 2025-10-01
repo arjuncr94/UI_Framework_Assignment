@@ -14,7 +14,7 @@ SearchTest
     Click On Login Option
     Input User Name    ${username}
     Input The Password    ${password}
-    Click Login
+    Click On Login Button
      Click on menu options
      Search item    ${product}
      Click on search button

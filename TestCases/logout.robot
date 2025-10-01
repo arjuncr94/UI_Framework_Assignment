@@ -14,7 +14,7 @@ LogoutTest
     Click On Login Option
     Input User Name    ${username}
     Input The Password    ${password}
-    Click Login
+    Click On Login Button
     Click On Menu Options
     Search Item    ${product}
     Click on search button

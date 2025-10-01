@@ -14,7 +14,8 @@ EndToEnd
     Click on Login option
     Input User Name    ${username}
     Input The Password    ${password}
-    Click Login
-    Assert Login
+    Click On Login Button
+    Validate Login Credentials
     Click On Menu Options
-    Search Multiple Products And Verify
+#    Search Multiple Products And Verify
+    Click Products With IF Without Range

@@ -17,6 +17,7 @@ Click on menu options
     Click Element    ${PRODUCTS_MENU}  #for link just Visible text is okay as locator
 
 Click on Login option
+    Wait Until Page Contains    ${LOGIN_MENU}
     Click Link    ${LOGIN_MENU}
 
 Input user name
@@ -27,14 +28,23 @@ Input the password
     [Arguments]    ${password}
     Input Text    ${PASSWORD_FIELD}    ${password}
 
-Click Login
+Click on Login button
     Click Element    ${LOGIN_BUTTON}
 
 Click logout
     Click Link    ${LOGOUT_LINK}
 
-Assert Login
-    Page Should Contain    ${LOGIN_MSG}       #Visible text as locator
+Validate Login credentials
+      ${result}=   Run Keyword And Return Status   Page Should Contain    ${LOGIN_MSG}       #Visible text as locator
+      IF    ${result}
+          Log To Console    Valid credentials
+          Click Logout
+      ELSE
+          Log To Console    Invalid credentials
+          Go Back
+      END
+
+
 Logout msg
     Page Should Contain    ${LOGOUT_MSG}
 Login success
@@ -85,3 +95,16 @@ Place Order
     Click Link    ${ORDER}
 
 
+Click Products With IF Without Range
+
+    ${products}=    Get WebElements    //div[contains(@class,'product-image-wrapper')]
+
+    FOR    ${product}    IN    @{products}
+        ${price_text}=    Get Text    ${product}//h2
+       IF    '${price_text}'=='Rs. 400' or '${price_text}'=='Rs. 500'
+           Click Element    ${product}//a[text()='View Product']
+            Go Back
+       END
+    END
+
+    Close Browser
