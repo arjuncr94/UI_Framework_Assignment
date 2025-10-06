@@ -10,7 +10,7 @@ ${DASHBOARD_TEXT}      Dashboard
 ${PRODUCTS_MENU}     //a[@href='/products']
 ${SEARCH_BUTTON}    submit_search
 ${VISIBLE_TEXT}    Dress
-${VIEW_PRODUCT}    //div[7]//div[1]//div[2]//ul[1]//li[1]//a[1]
+${VIEW_PRODUCT}    //div[@class='product-image-wrapper'][.//p[contains(text(),'Cotton Mull Embroidered Dress')]]//a[text()='View Product']
 ${VIEW_PRODUCT_COMMON}    //a[text()='View Product']
 ${ADD_CART}     //button[@type='button']
 ${CONTINUE_SHOPPING}     //button[text()='Continue Shopping']

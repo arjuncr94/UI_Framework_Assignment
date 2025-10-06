@@ -15,7 +15,7 @@ SearchTest
     Input User Name    ${username}
     Input The Password    ${password}
     Click On Login Button
-     Click on menu options
+     Click On Product Option
      Search item    ${product}
      Click on search button
      Verify Text on page

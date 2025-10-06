@@ -16,6 +16,5 @@ EndToEnd
     Input The Password    ${password}
     Click On Login Button
     Validate Login Credentials
-    Click On Menu Options
-#    Search Multiple Products And Verify
-    Click Products With IF Without Range
+    Click On Product Option
+    Search Multiple Products And Verify

@@ -13,7 +13,7 @@ Open the Browser
 Close the Browser
     Close All Browsers
 
-Click on menu options
+Click on product option
     Click Element    ${PRODUCTS_MENU}  #for link just Visible text is okay as locator
 
 Click on Login option
@@ -55,27 +55,34 @@ Search item
     Input Text    search    ${product}
 
 Search multiple products and verify
+    ${products_list}=    Create List    Blue Top    Men Tshirt
+    FOR    ${product}    IN    @{products_list}
+        Input Text    search    ${product}
+        Click Element    ${SEARCH_BUTTON}
 
-    ${products_list}=  Create List        Blue Top    Winter Top
-    FOR    ${each}    IN   @{products_list}
-            Input Text    search    ${each}
-            Click Element    ${SEARCH_BUTTON}
-            Log To Console    ${each}
-            ${name}=  Get Text    //div[contains(@class,'product-image-wrapper')]//p
-            IF    '${each}' == '${name}'
-                Click Element    ${VIEW_PRODUCT_COMMON}
-                Click Element    ${ADD_CART}
-                Go Back
-            ELSE
-                 Log To Console    ${each} not found
-                
-            END
+        ${status}=    Run Keyword And Return Status    Element Should Be Visible    ${VIEW_PRODUCT_COMMON}
+
+        IF    ${status}
+            Click Element    ${VIEW_PRODUCT_COMMON}
+            Click Element    ${ADD_CART}
+            Go Back
+        ELSE
+            Log To Console    ${product} not found
+        END
     END
+
+
+
+#            
+#                
+
+
+
 Click on search button
     Click Element    ${SEARCH_BUTTON}
 
 Verify Text on page
-    Page Should Contain    ${VISIBLE_TEXT}
+    Wait Until Page Contains    ${VISIBLE_TEXT}
 
 Add to Cart
     Click Element    ${VIEW_PRODUCT}
@@ -95,16 +102,6 @@ Place Order
     Click Link    ${ORDER}
 
 
-Click Products With IF Without Range
 
-    ${products}=    Get WebElements    //div[contains(@class,'product-image-wrapper')]
 
-    FOR    ${product}    IN    @{products}
-        ${price_text}=    Get Text    ${product}//h2
-       IF    '${price_text}'=='Rs. 400' or '${price_text}'=='Rs. 500'
-           Click Element    ${product}//a[text()='View Product']
-            Go Back
-       END
-    END
 
-    Close Browser

@@ -15,7 +15,7 @@ LogoutTest
     Input User Name    ${username}
     Input The Password    ${password}
     Click On Login Button
-    Click On Menu Options
+    Click On Product Option
     Search Item    ${product}
     Click on search button
     Click Logout
