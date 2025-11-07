@@ -1,7 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../Resources/keywords.robot
-Library    DataDriver    ../Resources/data.xlsx
+Resource    ../Resources/Homepage.resource
+Resource    ../Resources/login.resource
+Library    DataDriver    ../Data/data.xlsx
 Suite Setup    Open The Browser
 Suite Teardown    Close The Browser
 Test Template    LoginTest

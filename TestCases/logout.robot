@@ -1,12 +1,15 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../Resources/keywords.robot
+Resource    ../Resources/Homepage.resource
+Resource    ../Resources/login.resource
+Resource    ../Resources/search.resource
 Suite Setup    Open The Browser
 Suite Teardown    Close The Browser
 Test Template    LogoutTest
 
 *** Test Cases ***
-Login Using     arjuncr94@gmail.com    Practice@12    dress
+Login Using
+     arjuncr94@gmail.com    Practice@12    dress
 
 *** Keywords ***
 LogoutTest
